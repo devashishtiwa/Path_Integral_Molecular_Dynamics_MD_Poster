@@ -1,0 +1,83 @@
+\documentclass[aspectratio=169, block=fill, handout]{beamer}
+%\documentclass[aspectratio=169,numbering=fraction, block=fill]{beamer}
+\usepackage{cabin}
+\usefonttheme[onlymath]{serif}
+\usetheme[progressbar=none]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage[protrusion=true]{microtype}
+\usepackage{amssymb}
+\setbeamertemplate{itemize items}{\tiny $\blacksquare$}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\usepackage[backend=biber,style = phys, sorting=none,maxcitenames=2, giveninits = true, doi = false, url = false, eprint = false, maxbibnames = 3, isbn = false, hyperref = false]{biblatex}
+\bibliography{bibliography.bib}
+\renewbibmacro{in:}{}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\setbeamercolor{background canvas}{bg=white}
+\usepackage{smartdiagram}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{subfigure}
+\usepackage[justification=centering]{caption,subfig}
+\usepackage{float}
+\usepackage[version=4]{mhchem}
+
+
+% Color settings
+\definecolor{customcolor1}{rgb}{0.04,0.4,0.69}
+\definecolor{customcolor2}{rgb}{0.86,0.16,0.11}
+\definecolor{customcolor3}{rgb}{0.98,0.85,0.01}
+\definecolor{customcolor4}{rgb}{0.01, 0.75, 0.24}
+
+%\setbeamercolor{normal text}{fg=black, bg=white} 
+%\setbeamercolor{title separator}{fg=customcolor1 , bg=white} 
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning} 
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+\tikzstyle{box} = [rectangle, minimum width=1cm, minimum height=0.8cm, text centered, fill=blue!30]
+\tikzstyle{arrow} = [thick,->]
+\tikzset{>=latex}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\bibliography{bibliography.bib}
+
+\begin{document}
+
+\begin{frame}[noframenumbering,plain]
+\Huge\textbf{\textcolor{blue!40!white}{Path Integral} Molecular Dynamics\\ Simulations Using ESPResSo}
+\begin{columns}
+\column{0.5\textwidth}
+\huge
+\begin{align*}
+	\mathsf{\hat{H} = \frac{\hat{p}^2}{2m} + \hat{V}(\hat{x})}
+\end{align*}
+
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{../figures/cg_schematic_neutral/cg_schematic_neutral.pdf}
+\end{figure}
+\end{columns}
+\large
+Devashish Tiwari, David Beyer \& Christian Holm
+\end{frame}
+
+\end{document}
